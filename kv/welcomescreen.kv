@@ -1,0 +1,27 @@
+<WelcomeScreen>:
+    FloatLayout:
+        Image:
+            size_hint: 1, .1
+            pos_hint: {'top': .7, 'left': 1}
+            source: 'images/icons1.png'
+        ThemedButton:
+            id: log_in_button
+            size_hint: .9, .05
+            pos_hint: {"top": .5, "center_x": .5} #initial t=.3, x=.5
+            text: "Sign In"
+            bg_color: root.parent.parent.primary_color if root.parent else (0,0,0,1)
+            color: root.parent.parent.secondary_color if root.parent else (0,0,0,1)
+            on_release:
+                root.parent.current = "sign_in_screen"
+
+        ThemedButton:
+            id: create_account_button
+            size_hint: .9, .05
+            pos_hint: {"top": .425, "center_x": .5} #initial t=.225, x=.5
+            text: "Create Account"
+            bg_color: root.parent.parent.primary_color if root.parent else (0,0,0,1)
+            color: root.parent.parent.secondary_color if root.parent else (0,0,0,1)
+            on_release:
+                root.parent.current = "create_account_screen"
+
+
